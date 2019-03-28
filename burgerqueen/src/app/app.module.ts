@@ -9,6 +9,8 @@ import { WaiterComponent } from './waiter/waiter.component';
 import { ChefComponent } from './chef/chef.component';
 import { OrderComponent } from './order/order.component';
 import { ComandaComponent } from './comanda/comanda.component';
+import { FooterComponent } from './footer/footer.component';
+import { StatusComponent } from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ComandaComponent } from './comanda/comanda.component';
     WaiterComponent,
     ChefComponent,
     OrderComponent,
-    ComandaComponent
+    ComandaComponent,
+    FooterComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
