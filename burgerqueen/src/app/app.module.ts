@@ -12,6 +12,7 @@ import { OrderComponent } from './order/order.component';
 import { ComandaComponent } from './comanda/comanda.component';
 import { FooterComponent } from './footer/footer.component';
 import { StatusComponent } from './status/status.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { StatusComponent } from './status/status.component';
     FooterComponent,
     StatusComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent]
 })
