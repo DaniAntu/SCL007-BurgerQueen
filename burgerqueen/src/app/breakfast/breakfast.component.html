@@ -6,13 +6,17 @@
       <ul>
         <li
           *ngFor="let food of foods"
-          [class.selected]="comanda === selectedComanda"
-          (click)="onSelect(comanda)"
+          [class.selected]="food === foodSelected"
+          (click)="onSelect(food)"
         >
           <span class="breakfast-view text">{{ food.name }} $ {{ food.price }} </span>
         </li>
       </ul>
     </div>
   </mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <app-order [clientOrders]="foodArray"></app-order>
+    </mat-card>
+  </mat-grid-tile>
 </mat-grid-list>
