@@ -2,14 +2,22 @@
   <input matInput type="text" placeholder="Nombre Cliente" #clientname />
 </mat-form-field>
 
-<ul>
-  <li *ngFor="let clientOrder of clientOrders">
-    <span class="breakfast-view text">{{ clientOrder.name }} $ {{ clientOrder.price }} </span>
-  </li>
-</ul>
+<div class="show-orders">
+  <mat-form-field class="chip-list">
+    <mat-chip-list #chipList aria-label="Order selection">
+      <mat-chip
+        class="chip-select"
+        *ngFor="let clientOrder of clientOrders"
+        [removable]="removable"
+        (removed)="remove(clientOrder)"
+      >
+        {{ clientOrder.name }} $ {{ clientOrder.price }}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-form-field>
+</div>
 <mat-divider></mat-divider>
-<p>
-  {{ clientOrders?.name }}
-</p>
-<mat-divider></mat-divider>
-<span class="text">Total: $</span>
+<div>
+  <span class="text">Total: $ {{ sumOrder }}</span>
+</div>

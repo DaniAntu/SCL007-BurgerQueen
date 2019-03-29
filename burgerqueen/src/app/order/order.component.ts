@@ -10,7 +10,19 @@ export class OrderComponent implements OnInit {
   // Con el input, le indico que el valor viene desde fuera del componente
   name: string;
   @Input() clientOrders: Food[] = [];
-  // foods: Food[];
+  @Input() sumOrder: number;
+
+  // visible = true;
+  // selectable = true;
+  removable = true;
+
+  remove(clientOrder: Food): void {
+    const index = this.clientOrders.indexOf(clientOrder);
+
+    if (index >= 0) {
+      this.clientOrders.splice(index, 1);
+    }
+  }
 
   // clickedButton(value: any, price: number) {
   //   (this.item.order).push({ "value": value, "cost": price });
