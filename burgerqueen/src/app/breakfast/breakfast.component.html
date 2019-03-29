@@ -1,0 +1,18 @@
+<app-waiter></app-waiter>
+
+<mat-grid-list cols="2" rowHeight="450px">
+  <mat-grid-tile>
+    <div class="container">
+      <ul>
+        <li
+          *ngFor="let food of foods"
+          [class.selected]="comanda === selectedComanda"
+          (click)="onSelect(comanda)"
+        >
+          <span class="breakfast-view text">{{ food.name }} $ {{ food.price }} </span>
+        </li>
+      </ul>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+</mat-grid-list>

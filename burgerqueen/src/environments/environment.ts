@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseconfig: {
+    apiKey: 'AIzaSyAM33WsZjeKIMYAuZINoxXphbxMTBv2Axc',
+    authDomain: 'burgerqueen-fceba.firebaseapp.com',
+    databaseURL: 'https://burgerqueen-fceba.firebaseio.com',
+    projectId: 'burgerqueen-fceba',
+    storageBucket: 'burgerqueen-fceba.appspot.com',
+    messagingSenderId: '4729386127'
+  }
 };
 
 /*

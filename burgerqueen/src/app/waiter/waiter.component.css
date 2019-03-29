@@ -1,0 +1,22 @@
+.lines {
+  border-bottom: 3px solid #009688;
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
+.waiter-options {
+  background-color: #e9c46a;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 20px;
+  color: #333333;
+}
+.close {
+  padding: 5px 40px;
+}
+
+.spacer-icon {
+  padding: 0px;
+  color: #e76f51;
+}
