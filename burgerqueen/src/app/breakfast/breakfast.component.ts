@@ -12,15 +12,13 @@ export class BreakfastComponent implements OnInit {
   // Elemento food, lo muestra en pantalla
   foods = FOODS;
 
-  // Para obtener el valor seleccionado
-  foodSelected: Food;
+  // Obtiene seleccion y guarda en array
   foodArray: Food[] = [];
+  totalSum = 0;
 
   onSelect(food: Food): void {
-    this.foodSelected = food;
     this.foodArray.push(food);
-
-    console.log(this.foodArray);
+    this.totalSum += food.price;
   }
 
   // clickedButton(value: any, price: number) {
