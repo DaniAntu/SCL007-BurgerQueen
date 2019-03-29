@@ -16,7 +16,11 @@
   </mat-grid-tile>
   <mat-grid-tile>
     <mat-card>
-      <app-order [clientOrders]="foodArray" [sumOrder]="totalSum"></app-order>
+      <app-order
+        [clientOrders]="foodArray"
+        [sumOrderBreakfast]="totalSum"
+        (info)="iRecieveMyZero(value)"
+      ></app-order>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
