@@ -1,3 +1,26 @@
-<p>
-  lunch works!
-</p>
+<app-waiter></app-waiter>
+
+<mat-grid-list cols="2" rowHeight="450px">
+  <mat-grid-tile>
+    <div class="container">
+      <ul>
+        <li
+          *ngFor="let lunch of lunchs"
+          [class.selected]="lunch === lunchArray"
+          (click)="onSelect(lunch)"
+        >
+          <span class="lunch-view text">{{ lunch.name }} $ {{ lunch.price }} </span>
+        </li>
+      </ul>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <app-order
+        [clientOrders]="foodArray"
+        [sumOrderBreakfast]="totalSum"
+        (info)="iRecieveMyZero(value)"
+      ></app-order>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

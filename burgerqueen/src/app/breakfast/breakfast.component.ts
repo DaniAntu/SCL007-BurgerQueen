@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { FOODS } from './breakfastlist';
 import { Food } from '../models/breakfast';
-import { totalmem } from 'os';
 
 @Component({
   selector: 'app-breakfast',
@@ -22,9 +21,9 @@ export class BreakfastComponent implements OnInit {
     this.totalSum += food.price;
   }
 
-  iRecieveMyZero(value) {
-    console.log('Yo recibo mi cero' + value);
-    this.totalSum = 0;
+  iRecieveMyZero(value: number) {
+    // this.totalSum = 0;
+    console.log('lo que recibo ' + value);
   }
 
   constructor() {}

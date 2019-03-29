@@ -1,0 +1,33 @@
+mat-card {
+  margin: auto;
+  margin-top: 2rem;
+  width: 80%;
+}
+
+.lunch-view {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 32px;
+  /* padding: 20px 12px; */
+  border-radius: 16px;
+  background-color: #f4a261;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+}
+
+.text {
+  color: #333333;
+}
+
+.comanda-view {
+  border-radius: 10px;
+  border-color: #333333;
+  border: 2px;
+}

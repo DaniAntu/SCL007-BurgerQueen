@@ -11,7 +11,7 @@ export class OrderComponent implements OnInit {
   name: string;
   @Input() clientOrders: Food[] = [];
   @Input() sumOrderBreakfast: number;
-  @Output() info = new EventEmitter();
+  @Output() deleteRest = new EventEmitter();
   // visible = true;
   // selectable = true;
   removable = true;
@@ -19,31 +19,19 @@ export class OrderComponent implements OnInit {
   remove(clientOrder: Food): void {
     const index = this.clientOrders.indexOf(clientOrder);
     if (index >= 0) {
-      console.log(this.clientOrders[index].price);
+      this.takeYourZeroPrice(this.clientOrders[index].price);
       this.sumOrderBreakfast -= this.clientOrders[index].price;
       this.clientOrders.splice(index, 1);
     }
-    if (this.sumOrderBreakfast === 0) {
-      this.takeYourZeroPrice(this.sumOrderBreakfast);
-    }
   }
 
-  takeYourZeroPrice(value) {
-    this.info.emit({
+  takeYourZeroPrice(value: number) {
+    this.deleteRest.emit({
       value
     });
-    console.log('If i 0');
+    console.log('Hola > ' + value);
   }
-
-  // clickedButton(value: any, price: number) {
-  //   (this.item.order).push({ "value": value, "cost": price });
-  //   this.item.total += price;
-  // }
-
-  // this.item.total += price;
   constructor() {}
 
-  ngOnInit() {
-    console.log('Hola > ' + this.clientOrders);
-  }
+  ngOnInit() {}
 }
