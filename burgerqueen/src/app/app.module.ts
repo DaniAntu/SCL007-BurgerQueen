@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 import { DataService } from './services/data.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,10 +13,10 @@ import { OrderComponent } from './order/order.component';
 import { ComandaComponent } from './comanda/comanda.component';
 import { FooterComponent } from './footer/footer.component';
 import { StatusComponent } from './status/status.component';
-import { MaterialModule } from './material.module';
 import { HeaderComponent } from './header/header.component';
 import { BreakfastComponent } from './breakfast/breakfast.component';
 import { LunchComponent } from './lunch/lunch.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,15 @@ import { LunchComponent } from './lunch/lunch.component';
     BreakfastComponent,
     LunchComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    WaiterComponent
+  ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
-export class PizzaPartyAppModule {}
